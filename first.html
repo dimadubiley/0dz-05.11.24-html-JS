@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ</title>
+</head>
+<body>
+    <div id="light">
+        <div class="lightColor" id="red"></div>
+        <div class="lightColor" id="yellow"></div>
+        <div class="lightColor" id="green"></div>
+    </div>
+
+    <button onclick="chooseColor()">Нажми!</button>
+
+    <style>
+        #light
+        {
+            display: inline-block;
+            background: rgb(151, 151, 151);
+            padding: 15px;
+        }
+        
+        .lightColor
+        {
+            display: inline-block;
+            background: #646464;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            margin: 5px;
+        }
+
+        button
+        {
+            display: block;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        #red
+        {
+            background: red;
+        }
+    </style>
+
+    <script>
+        let currentColor = "red";
+
+        function chooseColor()
+        {
+            let redLight = document.getElementById("red");
+            let yellowLight = document.getElementById("yellow");
+            let greenLight = document.getElementById("green");
+
+            redLight.style.backgroundColor = "#646464";
+            yellowLight.style.backgroundColor = "#646464";
+            greenLight.style.backgroundColor = "#646464";
+
+            if (currentColor === "red")
+            {
+                yellowLight.style.backgroundColor = "yellow";
+                currentColor = "yellow";
+            }
+            else if (currentColor === "yellow")
+            {
+                greenLight.style.backgroundColor = "green";
+                currentColor = "green";
+            }
+            else
+            {
+                redLight.style.backgroundColor = "red";
+                currentColor = "red";
+            }
+        }
+    </script>
+</body>
+</html>
